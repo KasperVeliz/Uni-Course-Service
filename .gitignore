@@ -1,0 +1,79 @@
+# ==========================================
+# Prerequisites & Dependency Tracking
+# ==========================================
+*.d
+
+# ==========================================
+# Compiled Object files & Precompiled Headers
+# ==========================================
+*.slo
+*.lo
+*.o
+*.obj
+*.gch
+*.pch
+
+# ==========================================
+# Linker, Debugger, and Temporary Files
+# ==========================================
+*.ilk
+*.pdb
+*.dwo
+*.tmp
+*.log
+*.swp
+*.bak
+
+# ==========================================
+# Compiled Libraries (Dynamic & Static)
+# ==========================================
+*.so
+*.so.*
+*.dylib
+*.dll
+*.a
+*.lib
+*.la
+*.lai
+
+# ==========================================
+# Executables & App Bundles
+# ==========================================
+*.exe
+*.out
+*.app
+*.bin
+
+# ==========================================
+# Build Directories & Toolchains
+# ==========================================
+# Common build folder patterns (e.g., build/, build-release/, out/)
+[Bb]uild/
+[Bb]uild-*/
+[Oo]ut/
+[Bb]in/
+[X_x]64/
+[X_x]86/
+
+# ==========================================
+# CMake Outputs
+# ==========================================
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+
+# ==========================================
+# Generated Makefiles
+# ==========================================
+Makefile
+
+# ==========================================
+# Package Managers & Caches
+# ==========================================
+.cache/
+vcpkg_installed/
+.tbox/
+

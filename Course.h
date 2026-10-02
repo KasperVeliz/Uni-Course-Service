@@ -1,0 +1,24 @@
+#pragma once
+#include <string>
+
+class Course {
+    public:
+
+        Course();
+        Course(std::string id, std::string title, int seats);
+
+        virtual std::string_view getId();
+        virtual std::string_view getTitle();
+        virtual int getSeats();
+
+        virtual std::string_view updateId(std::string id);
+        virtual std::string_view updateTitle(std::string title);
+        virtual int updateSeats(int seats);
+
+        virtual void print(); 
+
+    private:
+        std::string id;
+        std::string title;
+        int seats;
+};
