@@ -1,5 +1,5 @@
-#include "Course.h"
-#include "CourseDao.h"
+#include "../include/Course.h"
+#include "../include/CourseDao.h"
 #include <stdio.h>
 
 CourseDao courses {CourseDao()};

@@ -1,4 +1,4 @@
-#include "Course.h"
+#include "../include/Course.h"
 #include <iostream>
 
 Course::Course(): id(""), title(""), seats(0){}
