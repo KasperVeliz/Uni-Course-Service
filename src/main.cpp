@@ -3,7 +3,6 @@
 #include "../include/CourseService.h"
 #include <unordered_map>
 #include <stdio.h>
-#include <iostream>
 
 
 int main(){
@@ -20,17 +19,8 @@ int main(){
 //        c->print();
 //    }
 //    service.getRequired("cmp1");
-    std::printf(service.deleteCourse("cmp408") == true ? "deleted" : "not deleted");
-
-    return 0;
-}
-
-int _main(){
-    std::unordered_map<int, std::vector<int>*> map;
-    std::vector<int>* v = new std::vector<int> {{1, 2, 3, 4}};
-    map[1] = v;
-    std::cout << map.size() << std::endl;
-    std::cout << map[1];
+    service.deleteCourse("cmp408");
+    courses->print();
 
     return 0;
 }

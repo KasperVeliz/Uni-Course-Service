@@ -39,5 +39,5 @@ bool CourseDao::deleteById(std::string_view id){
 }
 
 void CourseDao::print(){
-    std::cout << courses.size();
+    std::cout << courses.size() << "\n\n";
 }
