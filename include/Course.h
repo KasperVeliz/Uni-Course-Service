@@ -14,8 +14,9 @@ class Course {
         virtual std::string_view updateId(std::string id);
         virtual std::string_view updateTitle(std::string title);
         virtual int updateSeats(int seats);
+        virtual void remove();
 
-        virtual void print(); 
+        virtual std::string print(); 
 
     private:
         std::string id;

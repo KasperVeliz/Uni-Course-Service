@@ -7,14 +7,11 @@ CourseDao::CourseDao(){}
 CourseDao::CourseDao(std::unordered_map<std::string_view, Course*> courses): courses(courses){}
 
 Course* CourseDao::save(Course* course){
-    std::cout << "In DAO:\n" << course->getId() << "\n";
     if(course->getId() != "" && !courses.contains(course->getId())){
         std::string_view key {course->getId()};
         courses[key] = course;
-        std::cout << "[" << key << " , " << course << "]\n";
         return course;
     }
-    std::cout << "nullptr\n\n";
     return nullptr;
 }
 
@@ -32,6 +29,7 @@ std::unordered_map<std::string_view, Course*>* CourseDao::findAll(){
 
 bool CourseDao::deleteById(std::string_view id){
     if(courses.contains(id)){
+        courses[id]->remove();
         courses.erase(id);
         return true;
     }

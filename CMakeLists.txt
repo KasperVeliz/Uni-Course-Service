@@ -11,6 +11,8 @@ target_sources(courses PRIVATE
     src/Course.cpp
     src/CourseDao.cpp
     src/CourseService.cpp
+    src/CourseController.cpp
+    src/CourseRequests.cpp
     src/exceptions/DuplicateCourseException.cpp
     src/exceptions/CourseNotFoundException.cpp
 )

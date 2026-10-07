@@ -1,7 +1,6 @@
 #include "../include/CourseService.h"
 #include "../include/exceptions/DuplicateCourseException.h"
 #include "../include/exceptions/CourseNotFoundException.h"
-#include <iostream>
 
 
 CourseService::CourseService(CourseDao* dao): dao(dao){}
@@ -13,7 +12,6 @@ Course* CourseService::create(std::string_view id, std::string_view title, int s
         std::string e {id};
         throw DuplicateCourseException(e);
     }
-    std::cout << "creating...\n";
     return dao->save(c);
 }
 

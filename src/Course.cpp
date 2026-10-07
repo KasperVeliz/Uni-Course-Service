@@ -32,6 +32,10 @@ int Course::updateSeats(int seats){
     return this->seats;
 }
 
-void Course::print(){
-    std::cout << "Course ID: " << id << "\nCourse Title: " << title << "%s\nSeats: " << seats << "\n\n";
+void Course::remove(){
+    delete this;
+}
+
+std::string Course::print(){
+    return std::format("Course ID: {}\nCourse Title: {}\nSeats: {}\n\n", id, title, seats);
 }
