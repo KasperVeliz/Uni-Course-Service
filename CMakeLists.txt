@@ -10,9 +10,12 @@ add_executable(courses src/main.cpp)
 target_sources(courses PRIVATE
     src/Course.cpp
     src/CourseDao.cpp
-
+    src/CourseService.cpp
+    src/exceptions/DuplicateCourseException.cpp
+    src/exceptions/CourseNotFoundException.cpp
 )
 
 target_include_directories(courses PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/exceptions
 )

@@ -8,11 +8,12 @@ class CourseDao {
         CourseDao();
         CourseDao(std::unordered_map<std::string_view, Course*> courses);
 
-        virtual Course* save(Course course);
+        virtual Course* save(Course* course);
         virtual Course* findById(std::string_view id);
         virtual std::unordered_map<std::string_view, Course*>* findAll();
         virtual bool deleteById(std::string_view id);
 
+        virtual void print();
     private:
         std::unordered_map<std::string_view, Course*> courses;
 };

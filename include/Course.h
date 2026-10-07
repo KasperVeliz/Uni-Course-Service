@@ -5,7 +5,7 @@ class Course {
     public:
 
         Course();
-        Course(std::string id, std::string title, int seats);
+        Course(std::string_view id, std::string_view title, int seats);
 
         virtual std::string_view getId();
         virtual std::string_view getTitle();

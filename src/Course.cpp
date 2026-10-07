@@ -3,7 +3,7 @@
 
 Course::Course(): id(""), title(""), seats(0){}
 
-Course::Course(std::string id, std::string title, int seats): id(id), title(title), seats(seats){}
+Course::Course(std::string_view id, std::string_view title, int seats): id(id), title(title), seats(seats){}
 
 std::string_view Course::getId(){
     return this->id;

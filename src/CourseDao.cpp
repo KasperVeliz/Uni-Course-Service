@@ -1,25 +1,26 @@
 #include "../include/CourseDao.h"
+#include <unordered_map>
+#include <iostream>
 
-CourseDao::CourseDao(): courses(std::unordered_map<std::string_view, Course*>{}){
-
-}
+CourseDao::CourseDao(){}
 
 CourseDao::CourseDao(std::unordered_map<std::string_view, Course*> courses): courses(courses){}
 
-Course* CourseDao::save(Course course){
-    if(course.getId() != "" && !courses[course.getId()]){
-        Course* val {&course};
-        std::string_view key {course.getId()};
-        courses[key] = val;
-        return val;
+Course* CourseDao::save(Course* course){
+    std::cout << "In DAO:\n" << course->getId() << "\n";
+    if(course->getId() != "" && !courses.contains(course->getId())){
+        std::string_view key {course->getId()};
+        courses[key] = course;
+        std::cout << "[" << key << " , " << course << "]\n";
+        return course;
     }
+    std::cout << "nullptr\n\n";
     return nullptr;
 }
 
 Course* CourseDao::findById(std::string_view id){
-    const auto& iter = courses.find(id);
-    if(iter != courses.end()){
-        return iter->second;
+    if(courses.contains(id)){
+        return courses[id];
     }
     return nullptr; 
 }
@@ -30,10 +31,13 @@ std::unordered_map<std::string_view, Course*>* CourseDao::findAll(){
 }
 
 bool CourseDao::deleteById(std::string_view id){
-    auto iter = courses.find(id);
-    if(iter != courses.end()){
-        courses.erase(iter);
+    if(courses.contains(id)){
+        courses.erase(id);
         return true;
     }
     return false;
+}
+
+void CourseDao::print(){
+    std::cout << courses.size();
 }
